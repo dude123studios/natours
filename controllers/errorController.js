@@ -41,9 +41,9 @@ const sendErrorProd = (err, req, res) => {
     //Operational, trusted error: send message to client
     if (req.originalUrl.startsWith('/api/')) {
         if (err.isOperational) {
-            return res.status(err.statusCode).render('error', {
-                title: 'Something went wrong!',
-                msg: err.message,
+            return res.status(err.status).json({
+                status: 'error',
+                message: err.message,
             });
             //Programming or unkown error, dont leak details
         }
@@ -57,9 +57,9 @@ const sendErrorProd = (err, req, res) => {
     }
 
     if (err.isOperational) {
-        return res.status(err.statusCode).render({
+        return res.status(err.statusCode).render('error', {
             title: 'Something went wrong!',
-            message: err.message,
+            msg: err.message,
         });
         //Programming or unkown error, dont leak details
     }
