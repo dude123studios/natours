@@ -28,16 +28,15 @@ const sendToken = (
     if (sendToken) {
         token = signToken(user._id);
         json.token = token;
-        const cookieOptions = {
+        res.cookie('jwt', token, {
             expires: new Date(
                 Date.now() +
                     process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
             ),
             secure: true,
             httpOnly: true,
-        };
-        if (process.env.NODE_ENV == 'production') cookieOptions.secure = true;
-        res.cookie('jwt', token);
+            secure: req.secure || req.headers['x-forwared-proto'] === 'https',
+        });
     }
     if (sendUser) json.data.user = user;
 
