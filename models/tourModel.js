@@ -168,12 +168,12 @@ tourSchema.post('save', function (doc, next) {
 
 //QUERY MIDDLEWARE
 //The this keyword points to the query, not the document
-tourSchema.pre(/^find/, function (next) {
-    // tourSchema.pre('find', function (next) {
-    this.find({ secretTour: { $ne: true } });
-    this.start = Date.now();
-    next();
-});
+// tourSchema.pre(/^find/, function (next) {
+//     // tourSchema.pre('find', function (next) {
+//     this.find({ secretTour: { $ne: true } });
+//     this.start = Date.now();
+//     next();
+// });
 
 tourSchema.pre(/^find/, function (next) {
     this.populate({
@@ -184,10 +184,10 @@ tourSchema.pre(/^find/, function (next) {
     next();
 });
 
-tourSchema.post(/^find/, function (docs, next) {
-    console.log(`Query took ${Date.now() - this.start}ms`);
-    next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//     //console.log(`Query took ${Date.now() - this.start}ms`);
+//     next();
+// });
 
 //AGGREGATION MIDDLEWARE
 // tourSchema.pre('aggregate', function (next) {
