@@ -17,6 +17,7 @@ const signToken = (id) => {
 const sendToken = (
     user,
     statusCode,
+    req,
     res,
     sendToken = true,
     sendUser = true
@@ -65,7 +66,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     //     message,
     // });
 
-    sendToken(newUser, 201, res, false);
+    sendToken(newUser, 201, req, res, false);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -88,7 +89,7 @@ exports.login = catchAsync(async (req, res, next) => {
     }
 
     // 3) Send token
-    sendToken(user, 200, res, true, false);
+    sendToken(user, 200, req, res, true, false);
 });
 
 exports.logout = (req, res) => {
@@ -176,7 +177,7 @@ exports.confirmEmail = catchAsync(async (req, res, next) => {
     user.confirmedEmail = true;
     await user.save({ validateBeforeSave: false });
 
-    sendToken(user, 200, res, true, false);
+    sendToken(user, 200, req, res, true, false);
 });
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
@@ -228,7 +229,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
     // 3) update passwordChangeAt property(for future logins)
 
     // 4) Log the user in
-    sendToken(user, 201, res);
+    sendToken(user, 201, req, res);
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
@@ -249,7 +250,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     await user.save();
 
     //4) Send JWT to user
-    sendToken(user, 201, res);
+    sendToken(user, 201, req, res);
 });
 
 //No errors! only for server side rendered pages
