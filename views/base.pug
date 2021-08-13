@@ -8,8 +8,9 @@ html
             link(rel='stylesheet' href='/css/style.css')
             link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
             link(rel='shortcut icon' type='image' href='/img/favicon.png')
-            title Natours |  #{title}
-    
+            title Natours |  #{title}   
+    body(data-alert=`${alert ? alert: ''}`)
+
     body 
         // HEADER
         include _header
