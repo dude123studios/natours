@@ -8,7 +8,7 @@ Based on the Udemy course by Jonas Schmedtmann
 <p>Integrate with API at endpoints https://natours-dude123studios.herokuapp.com/api/v1/ </p>
 <p>API docs at postman from dude123studios</p>
 
-# Natours App
+# Natours
 
 ![Project Image](MEDIA/Cover.png)
 
@@ -28,8 +28,8 @@ Udemy course link => https://www.udemy.com/course/nodejs-express-mongodb-bootcam
 
 ## Description
 
-This repository is completely based off of the Udemy Course by Jonas Schmedtmann. Using many new technologies in the backend of the MERN stack, (with pug as frontend), I have a created heavily data modeled, very secure, very beautiful node.js application for a company to manage tours, and for users to buy and review them.  
-![Diagram](MEDIA/Diagram.png)
+This repository is completely based off of the Udemy Course by Jonas Schmedtmann. Using many new technologies in the backend of the MERN stack, (with pug as frontend), I have a created heavily data modeled, very secure, very beautiful node.js application for a company to manage tours, and for users to buy and review them. The implementation uses the MVC architecture. 
+![Completion](UC-2f8f6513-694d-4e0d-8c77-e0d46a483956.pdf)
 
 ---
 
@@ -43,7 +43,7 @@ This repository is completely based off of the Udemy Course by Jonas Schmedtmann
 - Pug
 - HTML, CSS, JS
 
-[Back To The Top](#Natours App)
+[Back To The Top](#Natours)
 
 ---
 ##### How To Use
@@ -61,7 +61,7 @@ This repository is completely based off of the Udemy Course by Jonas Schmedtmann
 - Email: dude123studios@gmail.com 
 
   
-[Back To The Top](#Natours App)
+[Back To The Top](#Natours)
 
 
 
